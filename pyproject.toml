@@ -1,0 +1,45 @@
+# ============================================================
+# Mangroves ORCA2 Regridding Tool
+# CNRS Research Project
+#
+# This file defines:
+# - Python version constraints (for reproducibility)
+# - Dependencies required for regridding and visualization
+#
+# Maintainer: Eric Duvieilbourg
+# ============================================================
+
+[project]
+name = "mangroves_orca2"
+version = "1.0.0"
+description = "Nearest-neighbor regridding tool to ORCA2 mesh"
+readme = "README.md"
+
+# Python version policy:
+# We restrict to <3.12 due to compatibility issues with:
+# - numba (JIT compilation)
+# - netCDF4 backend
+# This ensures reproducibility across research environments.
+requires-python = ">=3.10,<3.12"
+
+authors = [
+    { name = "Eric Duvieilbourg" }
+]
+
+license = { file = "LICENSE" }
+
+dependencies = [
+    "numpy",       # numerical computations
+    "xarray",      # NetCDF handling
+    "polars",      # fast CSV processing
+    "numba",       # JIT acceleration (critical)
+    "matplotlib",  # visualization
+    "netCDF4"      # file writing
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
