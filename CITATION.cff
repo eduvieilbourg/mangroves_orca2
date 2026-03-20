@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "Mangroves ORCA2 Regridding Tool"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+
+authors:
+
+* family-names: Duvieilbourg
+  given-names: Eric
+  affiliation: CNRS / LEMAR
+  orcid: "https://orcid.org/0009-0006-2181-9578"
+
+repository-code: "https://github.com/eduvieilbourg/mangroves_orca2"
+url: "https://github.com/eduvieilbourg/mangroves_orca2"
+
+version: "1.0.1"
+date-released: "2026-03-20"
+
+doi: "10.5281/zenodo.19129260"
+
+license: "MIT"
+
+keywords:
+
+* ORCA2
+* regridding
+* ocean modeling
+* geospatial data
+* mangroves
+* nearest neighbor
+
+abstract: >
+This software performs nearest-neighbor regridding of geospatial point data
+onto the ORCA2 ocean model grid. It provides a GUI-based workflow for
+non-programmers and outputs NetCDF and visualization files.
