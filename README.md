@@ -22,6 +22,15 @@ Designed for:
 
 ---
 
+## Software status
+
+* Version: v1.0.1
+* Status: stable
+* DOI registered (Zenodo)
+* Suitable for scientific use and reproducible workflows
+
+---
+
 ## Scientific context
 
 This tool enables:
@@ -64,7 +73,7 @@ Regridding uses a **nearest-neighbor search on the sphere**:
 
 ---
 
-## Installation (easy)
+## Installation (detailled)
 
 ### 1. Install `uv`
 
@@ -72,6 +81,22 @@ Mac / Linux:
 
 ```bash
 curl -Ls https://astral.sh/uv/install.sh | sh
+```
+
+*If the above fails (e.g., on some Linux distributions), use:*
+
+```bash
+sudo snap install astral-uv --classic
+```
+*Note: The `--classic` flag is required for full functionality*
+
+#### System Dependencies (Linux only)
+
+! Ensure the following packages are installed:
+
+```bash
+sudo apt update
+sudo apt install -y libssl-dev libffi-dev python3-dev
 ```
 
 Windows:
@@ -83,6 +108,14 @@ irm https://astral.sh/uv/install.ps1 | iex
 ---
 
 ### 2. Clone or download repository
+
+If you are using Git, you can do the following:
+
+```bash
+git clone https://github.com/eduvieilbourg/mangroves_orca2.git
+```
+
+Or, download only the .zip file and then unzip it, select the correct directory using:
 
 ```bash
 cd mangroves_orca2
@@ -96,9 +129,20 @@ cd mangroves_orca2
 uv sync
 ```
 
+*This will generate/update the `uv.lock` file if it doesn't exist.* 
+
 ---
 
-### 4. Run the tool
+### 4. Verify `uv.lock`
+
+* If `uv.lock` is missing after `uv sync`, run:
+```bash
+uv lock
+```
+
+---
+
+### 5. Run the tool
 
 ```bash
 uv run python scripts/run_regridding.py
@@ -184,6 +228,24 @@ YYYYMMDD-HHhMN_filename_to_orca2_nn.nc
 
 ---
 
+## DOI
+
+This software is archived on Zenodo:
+
+https://doi.org/10.5281/zenodo.19129260
+
+Each release is permanently versioned and citable.
+
+---
+
+## HAL record
+
+This software is also referenced in HAL (French open archive).
+
+https://hal.science/view/index/docid/5560796
+
+---
+
 ## License
 
 MIT License (see LICENSE file)
@@ -192,13 +254,14 @@ MIT License (see LICENSE file)
 
 ## Citation
 
-If you use this tool, please cite:
+If you use this software, please cite:
 
 ```text
-Duvieilbourg, E. (CNRS / LEMAR)
-Mangroves ORCA2 Regridding Tool
+Duvieilbourg, E. (2026).
+Mangroves ORCA2 Regridding Tool (v1.0.1).
+Zenodo. https://doi.org/10.5281/zenodo.19129260
 ```
 
-(see `CITATION.cff`)
+Full citation metadata available in `CITATION.cff`.
 
 ---
